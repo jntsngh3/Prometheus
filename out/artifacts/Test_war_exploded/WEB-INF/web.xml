@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+           version="4.0">
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+<servlet>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>ad.TestServlet</servlet-class>
+</servlet>
+    <servlet>
+        <servlet-name>MetricServlet</servlet-name>
+        <servlet-class>io.prometheus.client.exporter.MetricsServlet</servlet-class>
+    </servlet>
+<servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MetricServlet</servlet-name>
+        <url-pattern>/metrics</url-pattern>
+    </servlet-mapping>
+</web-app>
